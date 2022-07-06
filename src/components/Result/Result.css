@@ -13,3 +13,10 @@
     width: 65%;
     
 }
+#imgsrc{
+    width: 50%;
+    height: 50%;
+    border-radius: 180%;
+    margin-left: 6%;
+    margin-top: 5%;
+}
