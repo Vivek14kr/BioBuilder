@@ -1,0 +1,15 @@
+#box{
+  width: 65%;
+    height: 200px;
+    background-color: #B9C2BD;
+}
+#res{
+    /* border: 1px solid red; */
+    width: 40%;
+}
+#formheadd {
+    text-align: left;
+    background-color: #B9C2BD;
+    width: 65%;
+    
+}

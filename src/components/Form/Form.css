@@ -1,0 +1,24 @@
+#formstyle{
+    text-align: left;
+    margin-left: 28%;
+}
+.bgcolor{
+    background-color: #B9C2BD;
+    width: 85%;
+    height:60px;
+}
+#formhead{
+    text-align: left;
+    background-color: #B9C2BD;
+        width: 61.5%;
+        margin-left: 28%;
+}
+#form{
+    /* border: 1px solid blue; */
+    width: 60%;
+}
+.labeltext{
+  padding: 5%;
+  
+  
+}
