@@ -143,6 +143,7 @@ getContent()
        
       </div>
       <div>
+        <p>Press 2 times</p>
         <button onClick={translate}>Translate</button>
         
       </div>
