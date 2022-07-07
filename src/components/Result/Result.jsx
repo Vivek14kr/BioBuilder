@@ -1,7 +1,9 @@
-import React from "react";
-
-
+import React, { useEffect, useState } from "react";
 import "./Result.css";
+const axios = require("axios")
+
+
+
 function Result({
   forms,
   locationchecked,
@@ -12,6 +14,11 @@ function Result({
   reasonn,
   picSelect
 }) {
+   const [options, setOptions] = useState([]);
+   const [to, setTo] = useState("en");
+   const [from, setFrom] = useState("en");
+   const [input, setInput] = useState("");
+   const [output, setOutput] = useState("");
 
   const {
     name,
@@ -24,16 +31,53 @@ function Result({
     reason,
     pic,
   } = forms;
+    useEffect(() => {
+      axios
+        .get("https://libretranslate.de/languages", {
+          headers: { accept: "application/json" },
+        })
+        .then((res) => {
+          console.log(res.data);
+          setOptions(res.data);
+        });
+    }, []);
 
+  const translate = () => {
+    // curl -X POST "https://libretranslate.de/translate" -H  "accept: application/json" -H  "Content-Type: application/x-www-form-urlencoded" -d "q=hello&source=en&target=es&api_key=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+getContent()
+    const params = new URLSearchParams();
+    params.append("q", input);
+    params.append("source", from);
+    params.append("target", to);
+    params.append("api_key", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx");
 
+    axios
+      .post("https://libretranslate.de/translate", params, {
+        headers: {
+          accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setOutput(res.data.translatedText);
+      });
+  };
+
+ 
+
+  function getContent() {
+   setInput(document.getElementById("newton").innerHTML);
+  }
   return (
     <div id="res">
+      {picSelect ? <img id="imgsrc" src={pic} alt="" /> : ""}
       <div id="formheadd">
         <h2>Result</h2>
       </div>
 
       <div id="box">
-        <p>
+        <p id="newton">
           {locationchecked ? (
             <>
               {" "}
@@ -44,8 +88,8 @@ function Result({
           )}
           {schoolChecked ? (
             <>
-              {gender === "male" ? <>He</> : <>She</>} is studying {major} at the{" "}
-              {school}.{" "}
+              {gender === "male" ? <>He</> : <>She</>} is studying {major} at
+              the {school}.{" "}
             </>
           ) : (
             ""
@@ -74,7 +118,32 @@ function Result({
           )}
         </p>
       </div>
-      {picSelect ? <img id="imgsrc" src={pic} alt="" /> : ""}
+
+      <div>
+        From ({from}) :
+        <select onChange={(e) => setFrom(e.target.value)}>
+          {options.map((opt) => (
+            <option key={opt.code} value={opt.code}>
+              {opt.name}
+            </option>
+          ))}
+        </select>
+        To ({to}) :
+        <select onChange={(e) => setTo(e.target.value)}>
+          {options.map((opt) => (
+            <option key={opt.code} value={opt.code}>
+              {opt.name}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <textarea cols="50" rows="8" value={output}></textarea>
+      </div>
+      <div>
+        <button onClick={translate}>Translate</button>
+      </div>
     </div>
   );
 }
