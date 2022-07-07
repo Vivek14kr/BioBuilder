@@ -144,6 +144,7 @@ getContent()
       </div>
       <div>
         <button onClick={translate}>Translate</button>
+        
       </div>
     </div>
   );
