@@ -139,7 +139,8 @@ getContent()
       </div>
 
       <div>
-        <textarea cols="50" rows="8" value={output}></textarea>
+        <textarea id="textareaa" value={output}></textarea>
+       
       </div>
       <div>
         <button onClick={translate}>Translate</button>
