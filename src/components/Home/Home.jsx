@@ -8,6 +8,8 @@ function Home() {
 
   const [forms, setForms] = useState({}) 
   const handleChange = ({name, value})=>{
+
+    
       setForms({
         ...forms,
         [name]:value

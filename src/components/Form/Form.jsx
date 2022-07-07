@@ -40,6 +40,7 @@ function Form({
                 handleChange(e.target);
               }}
             >
+              <option value="">Select Gender</option>
               <option value="male">male</option>
               <option value="female">female</option>
             </select>
