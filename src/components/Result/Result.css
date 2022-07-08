@@ -8,16 +8,30 @@
     width: 40%;
 }
 #formheadd {
-    text-align: left;
+    text-align: center;
     background-color: #B9C2BD;
     width: 65%;
+   
+    height: 70px;
+        margin-top: 8%;
+    margin-bottom: 50px;
+}
+
+#newton{
+    padding: 20px;
     
 }
+button{
+    cursor: pointer;
+}
+#result{
+    padding-top: 5%;
+}
 #imgsrc{
-    width: 50%;
-    height: 50%;
+    width: 250px;
+    height: 250px;
     border-radius: 180%;
-    margin-left: 6%;
+    margin-left: 12%;
     margin-top: 5%;
 }
 #textareaa{

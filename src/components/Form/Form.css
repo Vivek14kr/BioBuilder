@@ -1,18 +1,24 @@
 #formstyle{
     text-align: left;
-    margin-left: 28%;
+    margin-left: 20%;
 }
 .bgcolor{
     background-color: #B9C2BD;
     width: 85%;
-    height:60px;
+    height:fit-content;
+    padding: 30px;
 }
 #formhead{
-    text-align: left;
+    text-align: center;
     background-color: #B9C2BD;
-        width: 61.5%;
-        margin-left: 28%;
+        width: 74.3%;
+        margin-left: 20%;
+        padding-top: 0.1px;
+        padding-bottom: 0.1px;
+        margin-bottom: 50px;
+        margin-top: 50px;
 }
+
 #form{
     /* border: 1px solid blue; */
     width: 60%;
@@ -21,4 +27,41 @@
   padding: 5%;
   
   
+}
+#major{
+    margin-left: 48px;
+   padding-top: 50px;
+}
+.inputtext{
+    margin-left: 5%;
+    height: 30px;
+    width: 200px;
+
+}
+#profcheckbox{
+    margin-left: 5%;
+    height: 20px;
+        width: 20px;
+        margin-right: 0px;
+}
+#gender{
+    margin-top: 50px;
+}
+.checkboxes{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.bigbox{
+    margin-top: 10px;
+    height: 100px;
+    width: 300px;
+    margin-left: 70px;
+}
+#newmajor{
+    margin-top: 5%;
+}
+label{
+    font-weight: bold;
 }

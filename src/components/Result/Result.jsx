@@ -73,17 +73,21 @@ getContent()
     <div id="res">
       {picSelect ? <img id="imgsrc" src={pic} alt="" /> : ""}
       <div id="formheadd">
-        <h2>Result</h2>
+        <h2 id="result">Result</h2>
       </div>
 
       <div id="box">
         <p id="newton">
+
+          
           {locationchecked ? (
             <>
               {" "}
               {name} is from {location}.
             </>
           ) : (
+
+            
             <>You are teaching {name} . </>
           )}
           {schoolChecked ? (
